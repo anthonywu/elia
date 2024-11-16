@@ -163,11 +163,26 @@ def get_builtin_google_models() -> list[EliaChatModel]:
     ]
 
 
+def get_builtin_xai_models() -> list[EliaChatModel]:
+    return [
+        EliaChatModel(
+            id="elia-grok-beta",
+            name="xai/grok-beta",
+            display_name="Grok Beta",
+            provider="xAI",
+            product="Grok",
+            description="Grok Beta",
+            temperature=0.7
+        )
+    ]
+
+
 def get_builtin_models() -> list[EliaChatModel]:
     return (
         get_builtin_openai_models()
         + get_builtin_anthropic_models()
         + get_builtin_google_models()
+        + get_builtin_xai_models()
     )
 
 
